@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Bug Bounty Dork Search Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .result-item {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .result-item a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .result-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Advanced Bug Bounty Dork Search Portal</h1>
+    <div class="form-group">
+        <input type="text" id="domain" placeholder="Enter target domain (e.g., example.com)">
+    </div>
+    <div class="dork-list">
+        <h3>🔐 Sensitive Files</h3>
+        <button onclick="performDork('filetype:log')">Find Log Files</button>
+        <button onclick="performDork('filetype:env')">Find .env Files</button>
+        <button onclick="performDork('filetype:sql')">Find SQL Files</button>
+        <button onclick="performDork('filetype:json')">Find JSON Files</button>
+
+        <h3>🛠️ Vulnerable Endpoints</h3>
+        <button onclick="performDork('inurl:/debug/')">Find Debug Pages</button>
+        <button onclick="performDork('inurl:/staging/')">Find Staging Environments</button>
+        <button onclick="performDork('inurl:/test/')">Find Test Pages</button>
+        <button onclick="performDork('inurl:/phpinfo.php')">Find PHP Info Pages</button>
+
+        <h3>📊 Exposed Databases</h3>
+        <button onclick="performDork('filetype:sql')">Find SQL Dumps</button>
+        <button onclick="performDork('filetype:db')">Find Database Files</button>
+        <button onclick="performDork('filetype:sqlite')">Find SQLite Files</button>
+        <button onclick="performDork('filetype:mdb')">Find Microsoft Access Files</button>
+
+        <h3>📡 API Endpoints</h3>
+        <button onclick="performDork('inurl:/api/')">Find API Endpoints</button>
+        <button onclick="performDork('filetype:json inurl:api')">Find JSON API Responses</button>
+        <button onclick="performDork('filetype:graphql')">Find GraphQL Endpoints</button>
+        <button onclick="performDork('filetype:wsdl')">Find WSDL Files</button>
+    </div>
+
+    <div class="results" id="results"></div>
+</div>
+
+<script>
+    function performDork(dork) {
+        const domain = document.getElementById('domain').value;
+        if (!domain) {
+            alert('Please enter a target domain.');
+            return;
+        }
+
+        const query = `site:${domain} ${dork}`;
+        const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+
+        const resultsContainer = document.getElementById('results');
+        const resultItem = document.createElement('div');
+        resultItem.className = 'result-item';
+        resultItem.innerHTML = `<a href="${url}" target="_blank">${query}</a>`;
+
+        resultsContainer.appendChild(resultItem);
+    }
+</script>
+
+</body>
+</html>
