@@ -3,65 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Bug Bounty Dork Search Portal</title>
+    <title>Bug Bounty Dork Search Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Poppins', sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
             margin: 0;
             padding: 20px;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #ffffff;
+            background-color: #282a36;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #ff79c6;
         }
         .form-group {
             margin-bottom: 20px;
         }
         input[type="text"] {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
             font-size: 16px;
+            background-color: #44475a;
+            color: #ffffff;
+            outline: none;
         }
         button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
+            padding: 12px 20px;
+            background-color: #6272a4;
+            color: #ffffff;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-size: 16px;
             cursor: pointer;
-            margin: 5px 0;
+            margin: 10px 0;
             width: 100%;
+            transition: all 0.3s ease;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #ff79c6;
         }
         .results {
             margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .result-card {
             padding: 15px;
-            background-color: #f9f9f9;
+            background-color: #44475a;
             border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
         }
-        .result-item {
-            margin-bottom: 10px;
-            font-size: 16px;
+        .result-card:hover {
+            transform: scale(1.05);
         }
-        .result-item a {
+        .result-card a {
             text-decoration: none;
-            color: #007bff;
+            color: #50fa7b;
+            font-size: 18px;
         }
-        .result-item a:hover {
+        .result-card a:hover {
+            color: #ff79c6;
             text-decoration: underline;
         }
     </style>
@@ -69,34 +83,20 @@
 <body>
 
 <div class="container">
-    <h1>Advanced Bug Bounty Dork Search Portal</h1>
+    <h1>🔐 Bug Bounty Dork Search Portal</h1>
     <div class="form-group">
         <input type="text" id="domain" placeholder="Enter target domain (e.g., example.com)">
     </div>
+
     <div class="dork-list">
-        <h3>🔐 Sensitive Files</h3>
-        <button onclick="performDork('filetype:log')">Find Log Files</button>
-        <button onclick="performDork('filetype:env')">Find .env Files</button>
-        <button onclick="performDork('filetype:sql')">Find SQL Files</button>
-        <button onclick="performDork('filetype:json')">Find JSON Files</button>
-
-        <h3>🛠️ Vulnerable Endpoints</h3>
-        <button onclick="performDork('inurl:/debug/')">Find Debug Pages</button>
-        <button onclick="performDork('inurl:/staging/')">Find Staging Environments</button>
-        <button onclick="performDork('inurl:/test/')">Find Test Pages</button>
-        <button onclick="performDork('inurl:/phpinfo.php')">Find PHP Info Pages</button>
-
-        <h3>📊 Exposed Databases</h3>
-        <button onclick="performDork('filetype:sql')">Find SQL Dumps</button>
-        <button onclick="performDork('filetype:db')">Find Database Files</button>
-        <button onclick="performDork('filetype:sqlite')">Find SQLite Files</button>
-        <button onclick="performDork('filetype:mdb')">Find Microsoft Access Files</button>
-
-        <h3>📡 API Endpoints</h3>
-        <button onclick="performDork('inurl:/api/')">Find API Endpoints</button>
-        <button onclick="performDork('filetype:json inurl:api')">Find JSON API Responses</button>
-        <button onclick="performDork('filetype:graphql')">Find GraphQL Endpoints</button>
-        <button onclick="performDork('filetype:wsdl')">Find WSDL Files</button>
+        <h3>Dork List</h3>
+        <!-- Buttons for each dork -->
+        <button onclick="performDork('site:accounts..com/signin/')">Site Accounts Signin</button>
+        <button onclick="performDork('intitle:\"index of\" drupal')">Index of Drupal</button>
+        <button onclick="performDork('inurl:login.cgi')">Login Portals</button>
+        <button onclick="performDork('inurl:\"server-status\" intitle:\"Apache Status\"')">Apache Server Status</button>
+        <button onclick="performDork('inurl:/filemanager/dialog.php')">File Manager Dialog</button>
+        <button onclick="performDork('s3 site:amazonaws.com filetype:log')">Amazon S3 Log Files</button>
     </div>
 
     <div class="results" id="results"></div>
@@ -114,11 +114,14 @@
         const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
 
         const resultsContainer = document.getElementById('results');
-        const resultItem = document.createElement('div');
-        resultItem.className = 'result-item';
-        resultItem.innerHTML = `<a href="${url}" target="_blank">${query}</a>`;
+        const resultCard = document.createElement('div');
+        resultCard.className = 'result-card';
+        resultCard.innerHTML = `
+            <p><strong>Dork:</strong> ${query}</p>
+            <a href="${url}" target="_blank">🔗 View Google Search Results</a>
+        `;
 
-        resultsContainer.appendChild(resultItem);
+        resultsContainer.appendChild(resultCard);
     }
 </script>
 
