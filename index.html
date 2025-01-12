@@ -293,70 +293,7 @@
                 ...securePatterns
             ];
 
-            const apiList = document.getElementById('apiList');
-            const extList = document.getElementById('extList');
-            const dirList = document.getElementById('dirList');
-            const fileList = document.getElementById('fileList');
-            const errorList = document.getElementById('errorList');
-            const loginList = document.getElementById('loginList');
-            const secureList = document.getElementById('secureList');
-
-            apiList.innerHTML = '';
-            extList.innerHTML = '';
-            dirList.innerHTML = '';
-            fileList.innerHTML = '';
-            errorList.innerHTML = '';
-            loginList.innerHTML = '';
-            secureList.innerHTML = '';
-
-            apiEndpoints.forEach(query => {
-                const li = document.createElement('li');
-                li.textContent = query;
-                li.classList.add('list-group-item');
-                apiList.appendChild(li);
-            });
-
-            fileExtensions.forEach(query => {
-                const li = document.createElement('li');
-                li.textContent = query;
-                li.classList.add('list-group-item');
-                extList.appendChild(li);
-            });
-
-            directoryPatterns.forEach(query => {
-                const li = document.createElement('li');
-                li.textContent = query;
-                li.classList.add('list-group-item');
-                dirList.appendChild(li);
-            });
-
-            fileBasedPatterns.forEach(query => {
-                const li = document.createElement('li');
-                li.textContent = query;
-                li.classList.add('list-group-item');
-                fileList.appendChild(li);
-            });
-
-            errorPatterns.forEach(query => {
-                const li = document.createElement('li');
-                li.textContent = query;
-                li.classList.add('list-group-item');
-                errorList.appendChild(li);
-            });
-
-            loginPatterns.forEach(query => {
-                const li = document.createElement('li');
-                li.textContent = query;
-                li.classList.add('list-group-item');
-                loginList.appendChild(li);
-            });
-
-            securePatterns.forEach(query => {
-                const li = document.createElement('li');
-                li.textContent = query;
-                li.classList.add('list-group-item');
-                secureList.appendChild(li);
-            });
+            const allQueriesStr = allQueries.join(' | ');
 
             document.getElementById('results').style.display = 'block';
 
@@ -365,8 +302,7 @@
 
             // Add functionality to the "Search on Google" button
             document.getElementById('searchButton').addEventListener('click', function() {
-                const query = allQueries.join(" OR ");
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(allQueriesStr)}`;
                 window.open(googleSearchUrl, '_blank');
             });
         });
