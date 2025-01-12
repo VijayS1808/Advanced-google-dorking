@@ -16,7 +16,7 @@ Level up your #BugBounty hunting with these essential Google Dorks for Web App S
 
 Check out the full list & start exploiting Google Dorks like a pro! 👇
 
-### Join Slack Channels
+### 👇Join Slack Channels
 
 ```
 ext:pdf "invite" "join.slack" site:"example.com"
