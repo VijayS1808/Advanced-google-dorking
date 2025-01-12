@@ -3,258 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore powerful Google Dorks curated for bug bounty hunting. Use these search queries to uncover hidden vulnerabilities and sensitive data - by VeryLazyTech.">
-    <meta name="author" content="VeryLazyTech">
-    <meta name="keywords" content="Google Dorks, Bug Bounty, VeryLazyTech, Ethical Hacking, Penetration Testing">
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <title>Google Dorks for Bug Bounty - By VeryLazyTech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Search Portal</title>
     <style>
-        :root {
-            --primary-color: #9C27B0;
-            --background-color: #111;
-            --text-color: #F5F5F5;
-            --accent-color: #FF4081;
-            --hover-color: #9C27B0;
-            --border-color: rgba(255, 255, 255, 0.2);
-            --button-color: #FF4081;
-            --link-hover-color: #E1BEE7;
-            --container-background: rgba(255, 255, 255, 0.1);
-            --shadow-color: rgba(0, 0, 0, 0.3);
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            padding: 40px 20px;
-            line-height: 1.6;
-            box-sizing: border-box;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 30px;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .container {
-            background-color: var(--container-background);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px var(--shadow-color);
-        }
-
-        .search-container {
-            margin: 32px 0;
-            text-align: center;
-        }
-
-        label {
-            display: block;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            color: var(--text-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        input {
-            width: 100%;
-            max-width: 500px;
-            font-size: 1.1em;
-            padding: 12px 20px;
-            border: none;
-            border-bottom: 2px solid var(--border-color);
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-color);
-            transition: all 0.3s ease;
-            border-radius: 4px;
-        }
-
-        input:focus {
-            outline: none;
-            border-bottom-color: var(--accent-color);
-            background-color: rgba(255, 255, 255, 0.08);
-        }
-
-        #dorkList {
-            margin: 40px 0;
+            font-family: Arial, sans-serif;
+            margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
-
-        li {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-            transition: transform 0.2s ease;
-        }
-
-        li:hover {
-            transform: translateX(10px);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--text-color);
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: var(--link-hover-color);
-        }
-
-        p.description {
-            color: #ccc;
-            font-size: 0.9em;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .social-links {
+        .header {
+            background-color: #4CAF50;
+            color: white;
             text-align: center;
-            margin: 20px 0;
+            padding: 15px;
         }
-
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 6px 12px;
-            color: var(--text-color);
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .search-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+        .search-box h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .search-box textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            border: 2px solid #4CAF50;
             border-radius: 5px;
-            background-color: var(--button-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            resize: none;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            color: #333;
         }
-
-        .social-links a:hover {
-            background-color: var(--hover-color);
-            color: #fff;
+        .search-box button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
         }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 20px;
-            }
-            
-            input {
-                width: calc(100% - 40px);
-            }
+        .search-box button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Google Dorks for Bug Bounty - By VeryLazyTech</h1>
 
-        <div class="social-links">
-            <a href="https://x.com/verylazytech" target="_blank" rel="noopener">
-                <img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fx.com%2Fverylazytech" alt="X Follow">
-            </a>
-            <a class="github-button" href="https://github.com/verylazytech/verylazytech.github.io" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star verylazytech/verylazytech.github.io on GitHub">Star</a>
-            <a href="https://buymeacoffee.com/verylazytech/extras" target="_blank" rel="noopener">
-                <img src="https://img.shields.io/badge/My%20Shop-verylazytech-%23FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=yellow" alt="My shop">
-            </a>
-            <a href="https://www.verylazytech.com" target="_blank" rel="noopener">
-                <img src="https://img.shields.io/badge/My%20GitBook-VeryLazyTech-%23FFDD00?style=flat&logo=gitbook&logoColor=white" alt="My Gitbook">
-            </a>
-        </div>
-        
-        <div class="search-container">
-            <label for="domainInput">Enter a domain:</label>
-            <input type="text" id="domainInput" placeholder="example.com" oninput="updateDomain()">
+    <div class="header">
+        <h1>Search Portal for Various Queries</h1>
+        <p>Search Slack Channels, Domains, API Endpoints, and much more</p>
+    </div>
+
+    <div class="container">
+        <div class="search-box">
+            <h2>Enter your query:</h2>
+            <textarea id="searchQuery" placeholder="Paste your search query here..."></textarea>
+            <br>
+            <button onclick="searchQuery()">Search</button>
         </div>
     </div>
 
-    <!-- List to display dorks in the desired style -->
-    <ul id="dorkList"></ul>
+    <div class="footer">
+        <p>&copy; 2025 Search Portal | All Rights Reserved</p>
+    </div>
 
     <script>
-        const dorkListElement = document.getElementById("dorkList");
-        const domainInput = document.getElementById("domainInput");
-
-        let originalDorks = []; // Store original dorks for reference
-
-        document.getElementById("domainInput").addEventListener("input", updateDomain);
-
-        async function fetchDorks() {
-            const url = "https://raw.githubusercontent.com/verylazytech/verylazytech.github.io/main/README.md";
-            const response = await fetch(url);
-            const text = await response.text();
-
-            const regex = /(?:^### (.+)|```([^`]+)```)/gm;
-            let match, currentTitle = ""; // Track current section title
-
-            while ((match = regex.exec(text)) !== null) {
-                if (match[1]) {
-                    currentTitle = match[1].trim(); // Update the title when found
-                } else if (match[2]) {
-                    const dork = match[2].trim();
-                    originalDorks.push(dork); // Store dork for later use
-
-                    // Only append the title once when the first dork appears under a title
-                    if (currentTitle) {
-                        const liElement = document.createElement("li");
-                        const descriptionElement = document.createElement("p");
-                        descriptionElement.classList.add("description");
-                        descriptionElement.textContent = currentTitle;
-                        liElement.appendChild(descriptionElement);
-
-                        const linkElement = document.createElement("a");
-                        linkElement.classList.add("dorkLink");
-                        linkElement.setAttribute("href", `https://www.google.com/search?q=${encodeURIComponent(dork)}`);
-                        linkElement.setAttribute("target", "_blank");
-                        linkElement.textContent = dork;
-
-                        liElement.appendChild(linkElement);
-                        dorkListElement.appendChild(liElement);
-
-                        currentTitle = ''; // Reset the title to prevent repetition
-                    } else {
-                        const liElement = document.createElement("li");
-                        const linkElement = document.createElement("a");
-                        linkElement.classList.add("dorkLink");
-                        linkElement.setAttribute("href", `https://www.google.com/search?q=${encodeURIComponent(dork)}`);
-                        linkElement.setAttribute("target", "_blank");
-                        linkElement.textContent = dork;
-                        liElement.appendChild(linkElement);
-                        dorkListElement.appendChild(liElement);
-                    }
-                }
+        function searchQuery() {
+            var query = document.getElementById('searchQuery').value;
+            if (query) {
+                var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+                window.open(searchUrl, '_blank');
+            } else {
+                alert('Please enter a query.');
             }
         }
-
-        function updateDomain() {
-            const domains = domainInput.value.split(",").map(domain => domain.trim()).filter(Boolean);
-        
-            if (domains.length === 0) return;
-        
-            const dorkLinks = document.querySelectorAll(".dorkLink");
-            dorkLinks.forEach((link, index) => {
-                let originalDork = originalDorks[index]; 
-        
-                domains.forEach(domain => {
-                    // This regex matches the site part (site:"domain") and replaces it with the new domain
-                    originalDork = originalDork.replace(/site:"[^"]+"/, `site:"${domain}"`);
-                    originalDork = originalDork.replace(/"example\.com"/g, `"${domain}"`);
-                    originalDork = originalDork.replace(/"example\[.]com"/g, `"${domain}"`);
-                });
-        
-                // Update the href and text of the dork link
-                link.href = `https://www.google.com/search?q=${encodeURIComponent(originalDork)}`;
-                link.textContent = originalDork;  // Display updated dork
-            });
-        }
-
-        fetchDorks();
     </script>
+
 </body>
 </html>
