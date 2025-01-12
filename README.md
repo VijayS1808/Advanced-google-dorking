@@ -14,113 +14,113 @@ Level up your #BugBounty hunting with these essential Google Dorks for Web App S
 
 🔹 Sensitive Docs & More!
 
-Check out the full list & start exploiting Google Dorks like a pro! 👇
+💠💠💠💠💠💠💠 Check out the full list & start exploiting Google Dorks like a pro! 👇💠💠💠💠💠💠💠💠
 
-### 👇Join Slack Channels
+### 💠Join Slack Channels💠
 
 ```
 ext:pdf "invite" "join.slack" site:"example.com"
 ```
-### Broad domain search w/ negative search
+### 💠Broad domain search w/ negative search💠
 
 ```
 site:"example.com" -www -shop -share -ir -mfa
 ```
 
-### PHP extension w/ parameters
+### 💠PHP extension w/ parameters💠
 
 ```
 site:"example.com" ext:php inurl:?
 ```
 
-### API Endpoints
+### 💠API Endpoints💠
 
 ```
 site:"example[.]com" inurl:api | site:*/rest | site:*/v1 | site:*/v2 | site:*/v3 | site:*/v4 | site:*/graphql | site:*/service | site:*/data | site:*/endpoint | site:*/action | site:*/json | site:*/swagger | site:*/auth | site:*/login | site:*/oauth | site:*/user | site:*/profile | site:*/session | site:*/token | site:*/key | site:*/config | site:*/admin | site:*/dashboard | site:*/status | site:*/monitor | site:*/settings | site:*/upload | site:*/download | site:*/search | site:*/metrics | site:*/events | site:*/webhook | site:*/notifications | site:*/report | site:*/logs | site:*/trace | site:*/actions | site:*/queue | site:*/tasks | site:*/subscriptions | site:*/websocket | site:*/batch | site:*/rpc | site:*/call | site:*/file | site:*/static | site:*/api-docs | site:*/health | site:*/register | site:*/reset | site:*/confirm | site:*/verify | site:*/verify-email | site:*/sms
 ```
 
-### Juicy Extensions
+### 💠Juicy Extensions💠
 
 ```
 site:"example[.]com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess | ext:json | ext:xml | ext:yml | ext:csv | ext:sql | ext:db | ext:tar | ext:gz | ext:bz2 | ext:7z | ext:zip | ext:rar | ext:log1 | ext:out | ext:tmp | ext:swo | ext:diff | ext:patch | ext:md5 | ext:sha1 | ext:crt | ext:key | ext:pem | ext:cert | ext:jsp | ext:php | ext:asp | ext:aspx | ext:bak1 | ext:swp1 | ext:temp | ext:backup1 | ext:dump | ext:log~ | ext:passwd | ext:pswd | ext:tar.gz | ext:config | ext:inc | ext:sqlite | ext:sqlite3 | ext:db3 | ext:bak~ | ext:orig | ext:old~ | ext:access | ext:secret | ext:credentials | ext:env.backup | ext:env.old | ext:env~ | ext:lock
 
 ```
 
-### High % inurl keywords
+### 💠High % inurl keywords💠
 
 ```
 inurl:conf | inurl:env | inurl:cgi | inurl:bin | inurl:etc | inurl:root | inurl:sql | inurl:backup | inurl:admin | inurl:php | inurl:config | inurl:db | inurl:logs | inurl:wp-content | inurl:private | inurl:inc | inurl:uploads | inurl:data | inurl:server | inurl:secure | inurl:auth | inurl:login | inurl:dev | inurl:debug | inurl:staging | inurl:test | inurl:temp | inurl:core | inurl:install | inurl:readme | inurl:.env | inurl:.git | inurl:.svn | inurl:.bak | inurl:.tar | inurl:.zip | inurl:adminpanel | inurl:dashboard | inurl:config.php | inurl:settings | inurl:resources | inurl:static | inurl:api | inurl:config.json | inurl:.htaccess | inurl:.gitignore | inurl:composer.json | inurl:docker-compose.yml | inurl:uploads | inurl:tmp | inurl:assets | inurl:scripts | inurl:middleware | inurl:management | inurl:.npmrc | inurl:node_modules | inurl:debug.log | inurl:trace | inurl:version | inurl:custom | inurl:monitor | inurl:session | inurl:cache | inurl:backup.zip | inurl:dump.sql | inurl:archive | inurl:archives | inurl:binlog | inurl:email | inurl:messages | inurl:logs.txt | inurl:config.yaml | inurl:cron | inurl:ssl | inurl:secrets | inurl:protected | inurl:key | inurl:privatekey | inurl:publickey | inurl:db_backup | inurl:admin_area | inurl:panel | inurl:settings.xml | inurl:config.xml | inurl:.rnd | inurl:*.bak | inurl:.pem | inurl:.key | inurl:.pfx | inurl:db_restore | inurl:api_keys | inurl:.bashrc site:"example[.]com"
 ```
 
-### Server Errors
+### 💠Server Errors💠
 
 ```
 inurl:"error" | intitle:"exception" | intitle:"failure" | intitle:"server at" | inurl:exception | "database error" | "SQL syntax" | "undefined index" | "unhandled exception" | "stack trace" | "500 Internal Server Error" | "503 Service Unavailable" | "404 Not Found" | "Bad Gateway" | "Gateway Timeout" | "request failed" | "server down" | "service error" | "server overload" | "service unavailable" | "connection timeout" | "database connection error" | "fatal error" | "application error" | "system error" | "configuration error" | "403 Forbidden" | "501 Not Implemented" | "502 Bad Gateway" | "408 Request Timeout" | "504 Gateway Timeout" | "403 Forbidden" | "database unresponsive" | "invalid query" site:"example[.]com"
 
 ```
 
-### XSS prone parameters
+### 💠XSS prone parameters💠
 
 ```
 inurl:q= | inurl:s= | inurl:search= | inurl:query= | inurl:keyword= | inurl:lang= | inurl:& | inurl:page= | inurl:term= | inurl:cat= | inurl:ref= | inurl:tag= | inurl:show= | inurl:id= | inurl:product= | inurl:article= | inurl:post= | inurl:count= | inurl:type= | inurl:category= | inurl:filter= | inurl:author= | inurl:date= | inurl:count= | inurl:entry= | inurl:sort= | inurl:order= | inurl:view= | inurl:searchterm= | inurl:querystring= | inurl:results= | inurl:subcategory= | inurl:filename= | inurl:file= | inurl:categoryid= | inurl:langcode= | inurl:price= | inurl:page_id= | inurl:limit= | inurl:slug= | inurl:status= | inurl:uid= | inurl:session= | inurl:locale= | inurl:page_num= site:"example.com"
 
 ```
 
-### Open Redirect prone parameters
+### 💠Open Redirect prone parameters💠
 
 ```
 inurl:url= | inurl:return= | inurl:next= | inurl:redirect= | inurl:redir= | inurl:ret= | inurl:r2= | inurl:page= | inurl:destination= | inurl:go= | inurl:forward= | inurl:uri= | inurl:goto= | inurl:link= | inurl:target= | inurl:path= | inurl:href= | inurl:jump= | inurl:back= | inurl:loc= | inurl:out= | inurl:redirto= | inurl:refto= | inurl:continue= | inurl:from= | inurl:to= | inurl:action= | inurl:nextpage= | inurl:url_redirect= | inurl:load= | inurl:redirecturl= | inurl:dest= | inurl:destinationurl= | inurl:forwardto= | inurl:continue_to= | inurl:goto_url= | inurl:locate= | inurl:go_url= | inurl:jump_url= inurl:& inurl:http site:"example.com"
 ```
 
-### SQLi Prone Parameters
+### 💠SQLi Prone Parameters💠
 
 ```
 inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= | inurl:& | inurl:page= | inurl:article= | inurl:search= | inurl:userid= | inurl:username= | inurl:product= | inurl:order= | inurl:post= | inurl:newsid= | inurl:bookid= | inurl:section= | inurl:flag= | inurl:view= | inurl:catid= | inurl:empid= | inurl:query= | inurl:lang= site:"example.com"
 ```
 
-### SSRF Prone Parameters
+### 💠SSRF Prone Parameters💠
 
 ```
 inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain= | inurl:page= | inurl:target= | inurl:ref= | inurl:server= | inurl:forward= | inurl:location= | inurl:target_url= | inurl:callback= | inurl:proxy= | inurl:request= | inurl:forward_to= | inurl:service= | inurl:fetch= | inurl:uri= | inurl:endpoint= | inurl:address= | inurl:host= | inurl:urlpath= | inurl:redir= | inurl:link= | inurl:shell= | inurl:destination= | inurl:url_redirect= | inurl:connect= | inurl:outbound= | inurl:internal= | inurl:call= | inurl:res= | inurl:fetch_url= | inurl:request_url= | inurl:netloc= | inurl:route= | inurl:linkto= | inurl:req= | inurl:get= | inurl:forwarded= | inurl:forward_url= | inurl:source= | inurl:urlencode= | inurl:params= | inurl:referrer= | inurl:response= | inurl:callback_url= | inurl:load= | inurl:fetchdata= | inurl:responsebody= | inurl:out= | inurl:deliver= | inurl:host_header= site:"example.com"
 ```
 
-### LFI Prone Parameters
+### 💠LFI Prone Parameters💠
 
 ```
 inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= | inurl:page= | inurl:section= | inurl:config= | inurl:lib= | inurl:template= | inurl:template_id= | inurl:script= | inurl:component= | inurl:data= | inurl:files= | inurl:load= | inurl:module= | inurl:source= | inurl:view= site:"example.com"
 ```
 
-### RCE Prone Parameters
+### 💠RCE Prone Parameters💠
 
 ```
 inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read= | inurl:ping= | inurl:system= | inurl:shell= | inurl:command= | inurl:eval= | inurl:cmdshell= | inurl:execute= | inurl:action= | inurl:script= | inurl:action=run | inurl:input= | inurl:output= | inurl:query_string= | inurl:file= | inurl:evalfile= | inurl:get= | inurl:set= | inurl:runfile= | inurl:include= | inurl:upload= | inurl:download= | inurl:invoke= | inurl:execfile= | inurl:fetch= | inurl:outputfile= | inurl:open= | inurl:save= | inurl:process= | inurl:runcommand= | inurl:execurl= | inurl:attach= | inurl:cmd_exec= | inurl:shell_exec= | inurl:evalcmd= | inurl:run_query= | inurl:exec_query= | inurl:systemcall= | inurl:shellcommand= | inurl:doscript= | inurl:execfunction= | inurl:run_script= | inurl:execute_command= | inurl:eval_exec= | inurl:commandexec= | inurl:process_exec= | inurl:call_shell= | inurl:do_exec= | inurl:commandinput= | inurl:run_input= | inurl:execute_input= | inurl:run_action= | inurl:eval_input= inurl:& site:"example.com"
 ```
 
-### File upload endpoints
+### 💠File upload endpoints💠
 
 ```
 site:"example.com" ”choose file”
 ```
 
-### API Docs
+### 💠API Docs💠
 
 ```
 inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer | inurl:docs/api | inurl:v1/api | inurl:developers | inurl:openapi | inurl:api-reference | inurl:api/v1 | inurl:rest-api | inurl:json-api | inurl:developer-guide | inurl:api-guide | inurl:resources/api | inurl:api/tutorial | inurl:dev/api | inurl:api-docs | inurl:api/v2 | inurl:postman | inurl:api-platform | inurl:api-management | inurl:api-console site:"example[.]com"
 ```
 
-### Login Pages
+### 💠Login Pages💠
 
 ```
 inurl:login | inurl:signin | inurl:auth | inurl:authentication | inurl:secure | inurl:account | inurl:user | inurl:member | inurl:loginpage | inurl:loginform | inurl:access | inurl:entry | inurl:panel | inurl:admin | inurl:portal | inurl:dashboard | inurl:console | inurl:adminlogin | inurl:management | inurl:signup | inurl:register | inurl:create-account | inurl:join | inurl:subscription | inurl:signupform | inurl:signup-page | inurl:signupform.php | inurl:registerform | inurl:registration | inurl:signup.html | inurl:signup.aspx | inurl:register.php | inurl:register.html | inurl:register.aspx | inurl:sign_in | inurl:sign_up | inurl:reset | inurl:forgot | inurl:recovery | inurl:loginform.php | inurl:signinform.php | inurl:forgot-password | inurl:change-password | inurl:user-recovery | inurl:account-recovery | inurl:recover | inurl:create-account-page | inurl:signup-process | inurl:register-now | inurl:new-account | inurl:signupform-new | inurl:signup-confirmation | inurl:sign-up-form | inurl:signup-link | inurl:activation | inurl:verify-account | inurl:confirm-email | inurl:welcome | inurl:activate-account | inurl:verify-registration | inurl:welcome-email | inurl:confirm-registration | inurl:account-verification | intitle:login | intitle:signin | intitle:auth | intitle:authentication | intitle:secure | intitle:account | intitle:user | intitle:member | intitle:loginpage | intitle:loginform | intitle:access | intitle:entry | intitle:admin | intitle:panel | intitle:portal | intitle:dashboard | intitle:console | intitle:adminlogin | intitle:management | intitle:signup | intitle:register | intitle:create-account | intitle:join | intitle:subscription | intitle:register-now | intitle:signup-form | intitle:activation | intitle:verify-account | intitle:confirm-email | site:"example[.]com" | site:"*.example[.]com" | inurl:login.aspx? | inurl:signin.aspx? | inurl:auth.php? | inurl:login.html? | inurl:signup.php? | inurl:register.php? | inurl:login-reset | inurl:forgot-password | inurl:change-password | inurl:login-reset | inurl:user-login | inurl:sign-in.php | inurl:loginform.html | inurl:admin-portal | inurl:signup? | inurl:register? | inurl:create-account? | inurl:register-form? | inurl:register-page? | inurl:signup-process? | inurl:signup-confirmation? | inurl:signup-form.php | inurl:account-verification? | inurl:email-confirmation? | inurl:account-activation? | inurl:activate-account? | inurl:verify-registration? | inurl:welcome-email? | inurl:confirm-registration?
 ```
 
-### Test Environments
+### 💠Test Environments💠
 
 ```
 inurl:test | inurl:env | inurl:dev | inurl:staging | inurl:sandbox | inurl:debug | inurl:temp | inurl:internal | inurl:demo | inurl:qa | inurl:preprod | inurl:local | inurl:beta | inurl:devops | inurl:backup | inurl:mirror | inurl:acceptance | inurl:development | inurl:testing | inurl:ci | inurl:uat | inurl:prototype | inurl:experimental | inurl:training | inurl:validation | inurl:scratch | inurl:review | inurl:integration | inurl:build site:"example.com"
 ```
 
-### Sensitive Documents
+### 💠Sensitive Documents💠
 
 ```
 site:"example.com" ext:txt | ext:pdf | ext:xml | ext:xls | ext:xlsx | ext:ppt | ext:pptx | ext:doc | ext:docx
@@ -128,32 +128,32 @@ intext:"confidential" | intext:"Not for Public Release" | intext:"internal use o
 
 ```
 
-### Sensitive Parameters
+### 💠Sensitive Parameters💠
 
 ```
 inurl:email= | inurl:phone= | inurl:password= | inurl:secret= | inurl:token= | inurl:apikey= | inurl:auth= | inurl:username= | inurl:creditcard= | inurl:ssn= | inurl:dob= | inurl:cvv= | inurl:pin= | inurl:access_token= | inurl:refresh_token= | inurl:security_code= | inurl:client_secret= | inurl:session_id= | inurl:invoice_id= | inurl:order_id= site:"example[.]com"
 ```
 
-### Adobe Experience Manager (AEM)
+### 💠Adobe Experience Manager (AEM)💠
 
 ```
 inurl:/content/usergenerated | inurl:/content/dam | inurl:/jcr:content | inurl:/libs/granite | inurl:/etc/clientlibs | inurl:/content/geometrixx | inurl:/bin/wcm | inurl:/crx/de | inurl:/content/sites | inurl:/libs/cq/core | inurl:/content/experience | inurl:/bin/querybuilder | inurl:/content/environments | inurl:/etc/designs | inurl:/content/websites site:"example[.]com"
 
 ```
 
-### Disclosed XSS and Open Redirects
+### 💠Disclosed XSS and Open Redirects💠
 
 ```
 site:openbugbounty.org inurl:reports intext:"example.com"
 ```
 
-### Google Groups
+###💠 Google Groups💠
 
 ```
 site:groups.google.com "example.com"
 ```
 
-### Code Leaks
+### 💠Code Leaks💠
 
 ```
 site:pastebin.com "example.com"
@@ -171,7 +171,7 @@ site:codebeautify.org "example.com"
 site:codepen.io "example.com"
 ```
 
-### Cloud Storage
+### 💠Cloud Storage💠
 
 ```
 site:s3.amazonaws.com "example.com"
@@ -225,13 +225,13 @@ site:box.com/s "example[.]com"
 site:docs.google.com inurl:"/d/" "example[.]com"
 ```
 
-### JFrog Artifactory
+### 💠JFrog Artifactory💠
 
 ```
 site:jfrog.io "example[.]com"
 ```
 
-### Firebase
+### 💠Firebase💠
 
 ```
 site:firebaseio.com "example[.]com"
