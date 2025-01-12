@@ -1,89 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Portal - Vijay</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .search-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .search-bar input {
-      padding: 10px;
-      font-size: 1.2em;
-      border-radius: 5px;
-      border: none;
-      width: 300px;
-    }
-    .search-bar button {
-      background-color: #ff8c00;
-      border: none;
-      padding: 10px;
-      margin-left: 10px;
-      border-radius: 5px;
-      font-size: 1.2em;
-      color: #fff;
-      cursor: pointer;
-    }
-    .search-bar button:hover {
-      background-color: #ff6a00;
-    }
-    .footer {
-      margin-top: 50px;
-      font-size: 1.2em;
-      color: #ddd;
-    }
-    .footer a {
-      color: #ff8c00;
-      text-decoration: none;
-    }
-    .footer a:hover {
-      color: #ff6a00;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Search Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://example.com/indian-actress-wallpaper.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        header h1 {
+            margin: 0;
+        }
+        .search-section {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+        }
+        .search-section input[type="text"] {
+            width: calc(100% - 120px);
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .search-section button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-section button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        function performSearch() {
+            const query = document.getElementById('searchInput').value;
+            const outputDiv = document.getElementById('results');
+            if (!query.trim()) {
+                outputDiv.innerHTML = '<p>Please enter a search query.</p>';
+                return;
+            }
+            outputDiv.innerHTML = `<p>Performing search for: <strong>${query}</strong></p>`;
+            const sections = {
+                "Join Slack Channels": "ext:pdf 'invite' 'join.slack' site:'example.com'",
+                "Broad Domain Search": "site:'example.com' -www -shop -share -ir -mfa",
+                "PHP Extensions": "site:'example.com' ext:php inurl:?",
+                "API Endpoints": "site:'example[.]com' inurl:api | ...",
+                "Juicy Extensions": "site:'example[.]com' ext:log | ext:txt | ...",
+                "High % inurl keywords": "inurl:conf | inurl:env | ...",
+                "Server Errors": "inurl:'error' | intitle:'exception' | ...",
+                "XSS prone parameters": "inurl:q= | inurl:s= | ...",
+                "Open Redirect prone parameters": "inurl:url= | inurl:return= | ...",
+                "SQLi Prone Parameters": "inurl:id= | inurl:pid= | ...",
+                "SSRF Prone Parameters": "inurl:http | inurl:url= | ...",
+                "LFI Prone Parameters": "inurl:include | inurl:dir | ...",
+                "RCE Prone Parameters": "inurl:cmd | inurl:exec= | ...",
+                "File Upload Endpoints": "site:'example.com' 'choose file'",
+                "API Docs": "inurl:apidocs | inurl:api-docs | ...",
+                "Login Pages": "inurl:login | inurl:signin | ...",
+                "Test Environments": "inurl:test | inurl:env | ...",
+                "Sensitive Documents": "site:'example.com' ext:txt | ext:pdf | ...",
+                "Sensitive Parameters": "inurl:email= | inurl:phone= | ...",
+                "Adobe Experience Manager": "inurl:/content/usergenerated | ...",
+                "Disclosed XSS and Open Redirects": "site:openbugbounty.org inurl:reports intext:'example.com'",
+                "Cloud Storage": "site:s3.amazonaws.com 'example.com' | ..."
+            };
+            const results = Object.entries(sections)
+                .filter(([title, data]) => data.toLowerCase().includes(query.toLowerCase()))
+                .map(([title, data]) => `<h3>${title}</h3><p>${data}</p>`)
+                .join('') || '<p>No results found for your query.</p>';
+
+            outputDiv.innerHTML = results;
+        }
+    </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to the Search Portal</h1>
-    <p>Search and Explore:</p>
-    <div class="search-bar">
-      <input type="text" placeholder="Enter your query" id="query" />
-      <button onclick="search()">Search</button>
+    <header>
+        <h1>Interactive Search Portal</h1>
+    </header>
+    <div class="search-section">
+        <input type="text" id="searchInput" placeholder="Enter your search query here...">
+        <button onclick="performSearch()">Search</button>
     </div>
-    <div class="footer">
-      <p>Created by <strong>Vijay</strong></p>
-    </div>
-  </div>
-
-  <script>
-    function search() {
-      const query = document.getElementById('query').value;
-      const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-      window.open(url, '_blank');
-    }
-  </script>
+    <div id="results" class="results"></div>
 </body>
 </html>
