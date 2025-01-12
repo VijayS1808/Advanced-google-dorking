@@ -3,322 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bug Bounty Dorking Portal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Explore powerful Google Dorks curated for bug bounty hunting. Use these search queries to uncover hidden vulnerabilities and sensitive data - by VeryLazyTech.">
+    <meta name="author" content="VeryLazyTech">
+    <meta name="keywords" content="Google Dorks, Bug Bounty, VeryLazyTech, Ethical Hacking, Penetration Testing">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>Google Dorks for Bug Bounty - By VeryLazyTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #9C27B0;
+            --background-color: #111;
+            --text-color: #F5F5F5;
+            --accent-color: #FF4081;
+            --hover-color: #9C27B0;
+            --border-color: rgba(255, 255, 255, 0.2);
+            --button-color: #FF4081;
+            --link-hover-color: #E1BEE7;
+            --container-background: rgba(255, 255, 255, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
         body {
-            background-color: #f0f0f0;
-            font-family: 'Arial', sans-serif;
-        }
-        .header {
-            background: linear-gradient(90deg, #ff4e00, #ff6a00);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-        .container {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
+            margin: 0 auto;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 40px 20px;
+            line-height: 1.6;
+            box-sizing: border-box;
         }
-        .footer {
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-align: center;
-            margin-top: 30px;
-            font-size: 0.8rem;
-            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
-        .category-title {
-            font-weight: bold;
-            margin-top: 20px;
-            color: #007bff;
+
+        .container {
+            background-color: var(--container-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--shadow-color);
         }
-        .category-button {
-            margin-top: 10px;
-            font-size: 1.1rem;
+
+        .search-container {
+            margin: 32px 0;
+            text-align: center;
         }
-        .category-button:hover {
-            background-color: #0056b3;
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .category-list {
-            list-style-type: none;
-            margin-top: 10px;
+
+        input {
+            width: 100%;
+            max-width: 500px;
+            font-size: 1.1em;
+            padding: 12px 20px;
+            border: none;
+            border-bottom: 2px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            border-radius: 4px;
         }
-        .category-list li {
-            background-color: #f8f9fa;
-            padding: 10px;
+
+        input:focus {
+            outline: none;
+            border-bottom-color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        #dorkList {
+            margin: 40px 0;
+            padding: 0;
+        }
+
+        li {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: transform 0.2s ease;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--link-hover-color);
+        }
+
+        p.description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 6px 12px;
+            color: var(--text-color);
             border-radius: 5px;
-            margin-bottom: 5px;
+            background-color: var(--button-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .category-list li:hover {
-            background-color: #e9ecef;
+
+        .social-links a:hover {
+            background-color: var(--hover-color);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            
+            input {
+                width: calc(100% - 40px);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Bug Bounty Dorking Portal</h1>
-        <p>Search and gather valuable information for your bug bounty program using Google dorks.</p>
-    </div>
-
     <div class="container">
-        <form id="dorkForm">
-            <div class="mb-3">
-                <label for="domain" class="form-label">Enter Target Domain</label>
-                <input type="text" class="form-control" id="domain" placeholder="example.com" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Generate Queries</button>
-        </form>
+        <h1>Google Dorks for Bug Bounty - By VeryLazyTech</h1>
 
-        <div id="results" class="mt-4" style="display: none;">
-            <h3>Generated Dork Queries:</h3>
-
-            <div class="category-title">API Endpoints:</div>
-            <button id="searchApi" class="btn btn-info category-button w-100">Search API Endpoints</button>
-            <ul id="apiList" class="category-list"></ul>
-
-            <div class="category-title">Sensitive File Extensions:</div>
-            <button id="searchExt" class="btn btn-success category-button w-100">Search Sensitive File Extensions</button>
-            <ul id="extList" class="category-list"></ul>
-
-            <div class="category-title">Directory-based Search Patterns:</div>
-            <button id="searchDir" class="btn btn-warning category-button w-100">Search Directory Patterns</button>
-            <ul id="dirList" class="category-list"></ul>
-
-            <div class="category-title">File-based Search Patterns:</div>
-            <button id="searchFile" class="btn btn-danger category-button w-100">Search File Patterns</button>
-            <ul id="fileList" class="category-list"></ul>
-
-            <div class="category-title">Error and Exception Patterns:</div>
-            <button id="searchError" class="btn btn-info category-button w-100">Search Error Patterns</button>
-            <ul id="errorList" class="category-list"></ul>
-
-            <div class="category-title">Login/Signin Pages:</div>
-            <button id="searchLogin" class="btn btn-primary category-button w-100">Search Login Pages</button>
-            <ul id="loginList" class="category-list"></ul>
-
-            <div class="category-title">Secure/Login Areas:</div>
-            <button id="searchSecure" class="btn btn-secondary category-button w-100">Search Secure Areas</button>
-            <ul id="secureList" class="category-list"></ul>
-
-            <button id="searchAll" class="btn btn-success w-100 mt-3">Search All Dorks on Google</button>
+        <div class="social-links">
+            <a href="https://x.com/verylazytech" target="_blank" rel="noopener">
+                <img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fx.com%2Fverylazytech" alt="X Follow">
+            </a>
+            <a class="github-button" href="https://github.com/verylazytech/verylazytech.github.io" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star verylazytech/verylazytech.github.io on GitHub">Star</a>
+            <a href="https://buymeacoffee.com/verylazytech/extras" target="_blank" rel="noopener">
+                <img src="https://img.shields.io/badge/My%20Shop-verylazytech-%23FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=yellow" alt="My shop">
+            </a>
+            <a href="https://www.verylazytech.com" target="_blank" rel="noopener">
+                <img src="https://img.shields.io/badge/My%20GitBook-VeryLazyTech-%23FFDD00?style=flat&logo=gitbook&logoColor=white" alt="My Gitbook">
+            </a>
+        </div>
+        
+        <div class="search-container">
+            <label for="domainInput">Enter a domain:</label>
+            <input type="text" id="domainInput" placeholder="example.com" oninput="updateDomain()">
         </div>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2025 Bug Bounty Dorking Portal</p>
-    </div>
+    <!-- List to display dorks in the desired style -->
+    <ul id="dorkList"></ul>
 
     <script>
-        document.getElementById('dorkForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const domain = document.getElementById('domain').value.trim();
-            if (!domain) return;
+        const dorkListElement = document.getElementById("dorkList");
+        const domainInput = document.getElementById("domainInput");
 
-            const apiEndpoints = [
-                `site:${domain} inurl:api`,
-                `site:${domain}/rest`,
-                `site:${domain}/v1`,
-                `site:${domain}/v2`,
-                `site:${domain}/v3`,
-                `site:${domain}/user`,
-                `site:${domain}/dashboard`,
-                `site:${domain}/profile`,
-                `site:${domain}/auth/login`,
-                `site:${domain}/apt`,
-                `site:${domain}/admin/dashboard`,
-                `site:${domain}/admin/users`,
-                `site:${domain}/admin/config`,
-                `site:${domain}/api-keys`,
-                `site:${domain}/secrets`,
-                `site:${domain}/config`,
-                `site:${domain}/logs`,
-                `site:${domain}/debug`,
-                `site:${domain}/status`,
-                `site:${domain}/webhooks`,
-                `site:${domain}/integrations`,
-                `site:${domain}/api/v1/external`,
-                `site:${domain}/callbacks`,
-                `site:${domain}/deactivate`,
-                `site:${domain}/delete-account`,
-                `site:${domain}/verify-email`,
-                `site:${domain}/verify-phone`,
-                `site:${domain}/internal/`,
-                `site:${domain}/v1/debug`,
-                `site:${domain}/api/v1/test`,
-                `site:${domain}/staging`,
-                `site:${domain}/sandbox`,
-                `site:${domain}/debug`
-            ];
+        let originalDorks = []; // Store original dorks for reference
 
-            const fileExtensions = [
-                `site:${domain} ext:xml`,
-                `site:${domain} ext:yml | ext:yaml`,
-                `site:${domain} ext:db | ext:sqlite | ext:sqlite3`,
-                `site:${domain} ext:ps1 | ext:bat | ext:cmd`,
-                `site:${domain} ext:php | ext:asp | ext:jsp`,
-                `site:${domain} ext:crt | ext:key | ext:pem`,
-                `site:${domain} ext:log.1 | ext:log.old`,
-                `site:${domain} ext:cfg`,
-                `site:${domain} ext:sql`,
-                `site:${domain} ext:dump`,
-                `site:${domain} ext:rdp`,
-                `site:${domain} ext:csv`,
-                `site:${domain} ext:passwd`,
-                `site:${domain} ext:doc | ext:docx`,
-                `site:${domain} ext:xls | ext:xlsx`,
-                `site:${domain} ext:p12 | ext:pfx`,
-                `site:${domain} ext:tar | ext:zip | ext:7z | ext:rar`,
-                `site:${domain} ext:bak1 | ext:bkp`,
-                `site:${domain} ext:tmp`
-            ];
+        document.getElementById("domainInput").addEventListener("input", updateDomain);
 
-            const directoryPatterns = [
-                `inurl:/config/`,
-                `inurl:/cgi-bin/`,
-                `inurl:/bin/`,
-                `inurl:/etc/`,
-                `inurl:/root/`,
-                `inurl:/backup/`,
-                `inurl:/admin/`,
-                `inurl:/wp-admin/`,
-                `inurl:/uploads/`,
-                `inurl:/data/`,
-                `inurl:/logs/`,
-                `inurl:/temp/`,
-                `inurl:/private/`,
-                `inurl:/assets/`,
-                `inurl:/images/`,
-                `inurl:/downloads/`,
-                `inurl:/scripts/`,
-                `inurl:/database/`,
-                `inurl:/admin_area/`,
-                `inurl:/conf/`,
-                `inurl:/configurations/`,
-                `inurl:/system/`,
-                `inurl:/tmp/`,
-                `inurl:/secure/`,
-                `inurl:/private_files/`,
-                `inurl:/keys/`,
-                `inurl:/database_backups/`,
-                `inurl:/archives/`
-            ];
+        async function fetchDorks() {
+            const url = "https://raw.githubusercontent.com/verylazytech/verylazytech.github.io/main/README.md";
+            const response = await fetch(url);
+            const text = await response.text();
 
-            const fileBasedPatterns = [
-                `inurl:conf`,
-                `inurl:env`,
-                `inurl:cgi`,
-                `inurl:bin`,
-                `inurl:etc`,
-                `inurl:root`,
-                `inurl:sql`,
-                `inurl:backup`,
-                `inurl:admin`,
-                `inurl:php`,
-                `inurl:database`,
-                `inurl:logs`,
-                `inurl:wp-config.php`,
-                `inurl:.git`,
-                `inurl:.env`,
-                `inurl:.htpasswd`,
-                `inurl:.htaccess`,
-                `inurl:config.php`,
-                `inurl:config.json`,
-                `inurl:.git/config`,
-                `inurl:debug`,
-                `inurl:login`
-            ];
+            const regex = /(?:^### (.+)|```([^`]+)```)/gm;
+            let match, currentTitle = ""; // Track current section title
 
-            const errorPatterns = [
-                `inurl:"error"`,
-                `inurl:"exception"`,
-                `inurl:"failure"`,
-                `inurl:"stack trace"`,
-                `inurl:"database error"`,
-                `inurl:"SQL syntax"`,
-                `inurl:"undefined index"`,
-                `inurl:"unhandled exception"`,
-                `intitle:"exception"`,
-                `intitle:"failure"`,
-                `intitle:"server at"`,
-                `intitle:"error"`,
-                `intitle:"stack trace"`,
-                `intitle:"database error"`,
-                `intitle:"SQL syntax error"`,
-                `intitle:"undefined index"`,
-                `intitle:"unhandled exception"`,
-                `intitle:"error log"`,
-                `inurl:"fatal error"`,
-                `inurl:"warning"`,
-                `inurl:"critical error"`,
-                `inurl:"internal server error"`,
-                `inurl:"500 error"`,
-                `inurl:"permission denied"`,
-                `inurl:"404 not found"`,
-                `inurl:"timeout error"`,
-                `inurl:"service unavailable"`,
-                `inurl:"403 forbidden"`,
-                `inurl:"bad gateway"`,
-                `inurl:"configuration error"`
-            ];
+            while ((match = regex.exec(text)) !== null) {
+                if (match[1]) {
+                    currentTitle = match[1].trim(); // Update the title when found
+                } else if (match[2]) {
+                    const dork = match[2].trim();
+                    originalDorks.push(dork); // Store dork for later use
 
-            const loginPatterns = [
-                `inurl:login`,
-                `inurl:signin`,
-                `inurl:auth`,
-                `inurl:account/login`,
-                `inurl:login.php`,
-                `inurl:login.html`,
-                `inurl:sign-in`,
-                `inurl:signin.php`,
-                `inurl:signin.html`,
-                `inurl:login_form`,
-                `inurl:authentication`,
-                `intitle:login`,
-                `intitle:signin`,
-                `intitle:sign-in`,
-                `intitle:login page`,
-                `intitle:authentication`,
-                `intitle:access`,
-                `inurl:login_register`,
-                `inurl:login/registration`,
-                `inurl:sign-up`,
-                `inurl:register`,
-                `intitle:register`,
-                `intitle:sign-up`,
-                `inurl:signup`,
-                `inurl:registration`,
-                `inurl:create-account`,
-                `inurl:reset-password`,
-                `inurl:forgot-password`,
-                `inurl:password-recovery`
-            ];
+                    // Only append the title once when the first dork appears under a title
+                    if (currentTitle) {
+                        const liElement = document.createElement("li");
+                        const descriptionElement = document.createElement("p");
+                        descriptionElement.classList.add("description");
+                        descriptionElement.textContent = currentTitle;
+                        liElement.appendChild(descriptionElement);
 
-            const securePatterns = [
-                `inurl:secure`,
-                `inurl:admin/login`,
-                `inurl:member-login`,
-                `inurl:user/login`,
-                `inurl:admin/auth`,
-                `inurl:admin-signin`,
-                `inurl:access/login`,
-                `inurl:restricted-area`,
-                `inurl:secure-login`
-            ];
+                        const linkElement = document.createElement("a");
+                        linkElement.classList.add("dorkLink");
+                        linkElement.setAttribute("href", `https://www.google.com/search?q=${encodeURIComponent(dork)}`);
+                        linkElement.setAttribute("target", "_blank");
+                        linkElement.textContent = dork;
 
-            // Display search results
-            document.getElementById('results').style.display = 'block';
-            apiEndpoints.forEach(query => {
-                const listItem = document.createElement('li');
-                listItem.classList.add('list-group-item');
-                listItem.textContent = query;
-                document.getElementById('apiList').appendChild(listItem);
+                        liElement.appendChild(linkElement);
+                        dorkListElement.appendChild(liElement);
+
+                        currentTitle = ''; // Reset the title to prevent repetition
+                    } else {
+                        const liElement = document.createElement("li");
+                        const linkElement = document.createElement("a");
+                        linkElement.classList.add("dorkLink");
+                        linkElement.setAttribute("href", `https://www.google.com/search?q=${encodeURIComponent(dork)}`);
+                        linkElement.setAttribute("target", "_blank");
+                        linkElement.textContent = dork;
+                        liElement.appendChild(linkElement);
+                        dorkListElement.appendChild(liElement);
+                    }
+                }
+            }
+        }
+
+        function updateDomain() {
+            const domains = domainInput.value.split(",").map(domain => domain.trim()).filter(Boolean);
+        
+            if (domains.length === 0) return;
+        
+            const dorkLinks = document.querySelectorAll(".dorkLink");
+            dorkLinks.forEach((link, index) => {
+                let originalDork = originalDorks[index]; 
+        
+                domains.forEach(domain => {
+                    // This regex matches the site part (site:"domain") and replaces it with the new domain
+                    originalDork = originalDork.replace(/site:"[^"]+"/, `site:"${domain}"`);
+                    originalDork = originalDork.replace(/"example\.com"/g, `"${domain}"`);
+                    originalDork = originalDork.replace(/"example\[.]com"/g, `"${domain}"`);
+                });
+        
+                // Update the href and text of the dork link
+                link.href = `https://www.google.com/search?q=${encodeURIComponent(originalDork)}`;
+                link.textContent = originalDork;  // Display updated dork
             });
-        });
+        }
+
+        fetchDorks();
     </script>
 </body>
 </html>
