@@ -3,108 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Search Portal</title>
+    <meta name="description" content="Explore powerful Google Dorks curated for bug bounty hunting. Use these search queries to uncover hidden vulnerabilities and sensitive data - by Vijay Sutar.">
+    <meta name="author" content="Vijay">
+    <meta name="keywords" content="Google Dorks">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>Google Dorks for Bug Bounty - By Vijay Sutar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #FF4081;
+            --background-color: rgba(0, 0, 0, 0.8);
+            --text-color: #ffffff;
+            --accent-color: #FFD1DC;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('https://example.com/indian-actress-wallpaper.jpg') no-repeat center center fixed;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--background-color) url('https://source.unsplash.com/1600x900/?bollywood,actress') no-repeat center center fixed;
             background-size: cover;
-            color: white;
+            color: var(--text-color);
+            padding: 40px 20px;
+            line-height: 1.6;
         }
-        header {
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
         }
-        header h1 {
-            margin: 0;
+
+        .search-container {
+            margin: 32px 0;
+            text-align: center;
         }
-        .search-section {
-            margin: 20px auto;
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 8px;
+
+        label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--accent-color);
         }
-        .search-section input[type="text"] {
-            width: calc(100% - 120px);
-            padding: 10px;
-            font-size: 16px;
+
+        input {
+            width: 100%;
+            max-width: 500px;
+            font-size: 1.1em;
+            padding: 12px 20px;
             border: none;
+            border-bottom: 2px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-color);
+            transition: all 0.3s ease;
             border-radius: 4px;
         }
-        .search-section button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+
+        input:focus {
+            outline: none;
+            border-bottom-color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.3);
         }
-        .search-section button:hover {
-            background-color: #0056b3;
+
+        #dorkList {
+            margin: 40px 0;
+            padding: 0;
         }
-        .results {
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            color: black;
-            border-radius: 8px;
+
+        li {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        p.description {
+            color: var(--accent-color);
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            
+            input {
+                width: calc(100% - 40px);
+            }
         }
     </style>
-    <script>
-        function performSearch() {
-            const query = document.getElementById('searchInput').value;
-            const outputDiv = document.getElementById('results');
-            if (!query.trim()) {
-                outputDiv.innerHTML = '<p>Please enter a search query.</p>';
-                return;
-            }
-            outputDiv.innerHTML = `<p>Performing search for: <strong>${query}</strong></p>`;
-            const sections = {
-                "Join Slack Channels": "ext:pdf 'invite' 'join.slack' site:'example.com'",
-                "Broad Domain Search": "site:'example.com' -www -shop -share -ir -mfa",
-                "PHP Extensions": "site:'example.com' ext:php inurl:?",
-                "API Endpoints": "site:'example[.]com' inurl:api | ...",
-                "Juicy Extensions": "site:'example[.]com' ext:log | ext:txt | ...",
-                "High % inurl keywords": "inurl:conf | inurl:env | ...",
-                "Server Errors": "inurl:'error' | intitle:'exception' | ...",
-                "XSS prone parameters": "inurl:q= | inurl:s= | ...",
-                "Open Redirect prone parameters": "inurl:url= | inurl:return= | ...",
-                "SQLi Prone Parameters": "inurl:id= | inurl:pid= | ...",
-                "SSRF Prone Parameters": "inurl:http | inurl:url= | ...",
-                "LFI Prone Parameters": "inurl:include | inurl:dir | ...",
-                "RCE Prone Parameters": "inurl:cmd | inurl:exec= | ...",
-                "File Upload Endpoints": "site:'example.com' 'choose file'",
-                "API Docs": "inurl:apidocs | inurl:api-docs | ...",
-                "Login Pages": "inurl:login | inurl:signin | ...",
-                "Test Environments": "inurl:test | inurl:env | ...",
-                "Sensitive Documents": "site:'example.com' ext:txt | ext:pdf | ...",
-                "Sensitive Parameters": "inurl:email= | inurl:phone= | ...",
-                "Adobe Experience Manager": "inurl:/content/usergenerated | ...",
-                "Disclosed XSS and Open Redirects": "site:openbugbounty.org inurl:reports intext:'example.com'",
-                "Cloud Storage": "site:s3.amazonaws.com 'example.com' | ..."
-            };
-            const results = Object.entries(sections)
-                .filter(([title, data]) => data.toLowerCase().includes(query.toLowerCase()))
-                .map(([title, data]) => `<h3>${title}</h3><p>${data}</p>`)
-                .join('') || '<p>No results found for your query.</p>';
-
-            outputDiv.innerHTML = results;
-        }
-    </script>
 </head>
 <body>
-    <header>
-        <h1>Interactive Search Portal</h1>
-    </header>
-    <div class="search-section">
-        <input type="text" id="searchInput" placeholder="Enter your search query here...">
-        <button onclick="performSearch()">Search</button>
+    <div class="container">
+        <h1>Google Dorks for Bug Bounty - By Vijay Sutar</h1>
+
+        <div class="search-container">
+            <label for="domainInput">Enter a domain:</label>
+            <input type="text" id="domainInput" placeholder="example.com" oninput="updateDomain()">
+        </div>
     </div>
-    <div id="results" class="results"></div>
+
+    <ul id="dorkList"></ul>
+
+    <script>
+        const dorkListElement = document.getElementById("dorkList");
+        const domainInput = document.getElementById("domainInput");
+
+        let originalDorks = [];
+
+        async function fetchDorks() {
+            const url = "https://raw.githubusercontent.com/VijayS1808/Advanced-google-dorking/refs/heads/master/README.md";
+            const response = await fetch(url);
+            const text = await response.text();
+
+            const regex = /(?:^### (.+)|```([^`]+)```)/gm;
+            let match, currentTitle = "";
+
+            while ((match = regex.exec(text)) !== null) {
+                if (match[1]) {
+                    currentTitle = match[1].trim();
+                } else if (match[2]) {
+                    const dork = match[2].trim();
+                    originalDorks.push(dork);
+
+                    if (currentTitle) {
+                        const liElement = document.createElement("li");
+                        const descriptionElement = document.createElement("p");
+                        descriptionElement.classList.add("description");
+                        descriptionElement.textContent = currentTitle;
+                        liElement.appendChild(descriptionElement);
+
+                        const linkElement = document.createElement("a");
+                        linkElement.classList.add("dorkLink");
+                        linkElement.setAttribute("href", `https://www.google.com/search?q=${encodeURIComponent(dork)}`);
+                        linkElement.setAttribute("target", "_blank");
+                        linkElement.textContent = dork;
+
+                        liElement.appendChild(linkElement);
+                        dorkListElement.appendChild(liElement);
+
+                        currentTitle = '';
+                    } else {
+                        const liElement = document.createElement("li");
+                        const linkElement = document.createElement("a");
+                        linkElement.classList.add("dorkLink");
+                        linkElement.setAttribute("href", `https://www.google.com/search?q=${encodeURIComponent(dork)}`);
+                        linkElement.setAttribute("target", "_blank");
+                        linkElement.textContent = dork;
+                        liElement.appendChild(linkElement);
+                        dorkListElement.appendChild(liElement);
+                    }
+                }
+            }
+        }
+
+        function updateDomain() {
+            const domains = domainInput.value.split(",").map(domain => domain.trim()).filter(Boolean);
+
+            if (domains.length === 0) return;
+
+            const dorkLinks = document.querySelectorAll(".dorkLink");
+            dorkLinks.forEach((link, index) => {
+                let originalDork = originalDorks[index];
+
+                domains.forEach(domain => {
+                    originalDork = originalDork.replace(/site:"[^"]+"/, `site:"${domain}"`);
+                    originalDork = originalDork.replace(/"example\.com"/g, `"${domain}"`);
+                    originalDork = originalDork.replace(/"example\[.]com"/g, `"${domain}"`);
+                });
+
+                link.href = `https://www.google.com/search?q=${encodeURIComponent(originalDork)}`;
+                link.textContent = originalDork;
+            });
+        }
+
+        fetchDorks();
+    </script>
 </body>
 </html>
