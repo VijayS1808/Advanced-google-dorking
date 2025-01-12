@@ -58,27 +58,34 @@
             <h3>Generated Dork Queries:</h3>
 
             <h4 class="api-title">API Endpoints:</h4>
+            <button id="searchApi" class="btn btn-info w-100 mb-3">Search API Endpoints</button>
             <ul id="apiList" class="list-group"></ul>
 
             <h4 class="ext-title">Sensitive File Extensions:</h4>
+            <button id="searchExt" class="btn btn-info w-100 mb-3">Search Sensitive File Extensions</button>
             <ul id="extList" class="list-group"></ul>
 
             <h4 class="api-title">Directory-based Search Patterns:</h4>
+            <button id="searchDir" class="btn btn-info w-100 mb-3">Search Directory Patterns</button>
             <ul id="dirList" class="list-group"></ul>
 
             <h4 class="ext-title">File-based Search Patterns:</h4>
+            <button id="searchFile" class="btn btn-info w-100 mb-3">Search File Patterns</button>
             <ul id="fileList" class="list-group"></ul>
 
             <h4 class="api-title">Error and Exception Patterns:</h4>
+            <button id="searchError" class="btn btn-info w-100 mb-3">Search Error Patterns</button>
             <ul id="errorList" class="list-group"></ul>
 
             <h4 class="ext-title">Login/Signin Pages:</h4>
+            <button id="searchLogin" class="btn btn-info w-100 mb-3">Search Login Pages</button>
             <ul id="loginList" class="list-group"></ul>
 
             <h4 class="api-title">Secure/Login Areas:</h4>
+            <button id="searchSecure" class="btn btn-info w-100 mb-3">Search Secure Areas</button>
             <ul id="secureList" class="list-group"></ul>
 
-            <button id="searchButton" class="btn btn-success w-100 mt-3" style="display: none;">Search on Google</button>
+            <button id="searchAll" class="btn btn-success w-100 mt-3">Search All Dorks on Google</button>
         </div>
     </div>
 
@@ -293,16 +300,55 @@
                 ...securePatterns
             ];
 
-            const allQueriesStr = allQueries.join(' | ');
-
+            // Display individual search queries in the list
             document.getElementById('results').style.display = 'block';
 
-            // Show the "Search on Google" button
-            document.getElementById('searchButton').style.display = 'block';
+            apiEndpoints.forEach(query => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('list-group-item');
+                listItem.textContent = query;
+                document.getElementById('apiList').appendChild(listItem);
+            });
 
-            // Add functionality to the "Search on Google" button
-            document.getElementById('searchButton').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(allQueriesStr)}`;
+            // Add functionality to the "Search All" button
+            document.getElementById('searchAll').addEventListener('click', function() {
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(allQueries.join(' | '))}`;
+                window.open(googleSearchUrl, '_blank');
+            });
+
+            // Add functionality to each category button
+            document.getElementById('searchApi').addEventListener('click', function() {
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(apiEndpoints.join(' | '))}`;
+                window.open(googleSearchUrl, '_blank');
+            });
+
+            document.getElementById('searchExt').addEventListener('click', function() {
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(fileExtensions.join(' | '))}`;
+                window.open(googleSearchUrl, '_blank');
+            });
+
+            document.getElementById('searchDir').addEventListener('click', function() {
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(directoryPatterns.join(' | '))}`;
+                window.open(googleSearchUrl, '_blank');
+            });
+
+            document.getElementById('searchFile').addEventListener('click', function() {
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(fileBasedPatterns.join(' | '))}`;
+                window.open(googleSearchUrl, '_blank');
+            });
+
+            document.getElementById('searchError').addEventListener('click', function() {
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(errorPatterns.join(' | '))}`;
+                window.open(googleSearchUrl, '_blank');
+            });
+
+            document.getElementById('searchLogin').addEventListener('click', function() {
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(loginPatterns.join(' | '))}`;
+                window.open(googleSearchUrl, '_blank');
+            });
+
+            document.getElementById('searchSecure').addEventListener('click', function() {
+                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(securePatterns.join(' | '))}`;
                 window.open(googleSearchUrl, '_blank');
             });
         });
