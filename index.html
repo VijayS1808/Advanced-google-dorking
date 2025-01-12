@@ -7,42 +7,62 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
         }
         .header {
-            background: linear-gradient(90deg, #007bff, #6610f2);
+            background: linear-gradient(90deg, #ff4e00, #ff6a00);
             color: white;
             text-align: center;
             padding: 20px;
             margin-bottom: 20px;
+            border-radius: 10px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
             background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
         }
         .footer {
             text-align: center;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #6c757d;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #999;
         }
-        .api-title {
+        .category-title {
+            font-weight: bold;
+            margin-top: 20px;
             color: #007bff;
         }
-        .ext-title {
-            color: #28a745;
+        .category-button {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        .category-button:hover {
+            background-color: #0056b3;
+        }
+        .category-list {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+        .category-list li {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .category-list li:hover {
+            background-color: #e9ecef;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Bug Bounty Dorking Portal</h1>
-        <p>Efficiently search and gather valuable information for your bug bounty program.</p>
+        <p>Search and gather valuable information for your bug bounty program using Google dorks.</p>
     </div>
 
     <div class="container">
@@ -57,33 +77,33 @@
         <div id="results" class="mt-4" style="display: none;">
             <h3>Generated Dork Queries:</h3>
 
-            <h4 class="api-title">API Endpoints:</h4>
-            <button id="searchApi" class="btn btn-info w-100 mb-3">Search API Endpoints</button>
-            <ul id="apiList" class="list-group"></ul>
+            <div class="category-title">API Endpoints:</div>
+            <button id="searchApi" class="btn btn-info category-button w-100">Search API Endpoints</button>
+            <ul id="apiList" class="category-list"></ul>
 
-            <h4 class="ext-title">Sensitive File Extensions:</h4>
-            <button id="searchExt" class="btn btn-info w-100 mb-3">Search Sensitive File Extensions</button>
-            <ul id="extList" class="list-group"></ul>
+            <div class="category-title">Sensitive File Extensions:</div>
+            <button id="searchExt" class="btn btn-success category-button w-100">Search Sensitive File Extensions</button>
+            <ul id="extList" class="category-list"></ul>
 
-            <h4 class="api-title">Directory-based Search Patterns:</h4>
-            <button id="searchDir" class="btn btn-info w-100 mb-3">Search Directory Patterns</button>
-            <ul id="dirList" class="list-group"></ul>
+            <div class="category-title">Directory-based Search Patterns:</div>
+            <button id="searchDir" class="btn btn-warning category-button w-100">Search Directory Patterns</button>
+            <ul id="dirList" class="category-list"></ul>
 
-            <h4 class="ext-title">File-based Search Patterns:</h4>
-            <button id="searchFile" class="btn btn-info w-100 mb-3">Search File Patterns</button>
-            <ul id="fileList" class="list-group"></ul>
+            <div class="category-title">File-based Search Patterns:</div>
+            <button id="searchFile" class="btn btn-danger category-button w-100">Search File Patterns</button>
+            <ul id="fileList" class="category-list"></ul>
 
-            <h4 class="api-title">Error and Exception Patterns:</h4>
-            <button id="searchError" class="btn btn-info w-100 mb-3">Search Error Patterns</button>
-            <ul id="errorList" class="list-group"></ul>
+            <div class="category-title">Error and Exception Patterns:</div>
+            <button id="searchError" class="btn btn-info category-button w-100">Search Error Patterns</button>
+            <ul id="errorList" class="category-list"></ul>
 
-            <h4 class="ext-title">Login/Signin Pages:</h4>
-            <button id="searchLogin" class="btn btn-info w-100 mb-3">Search Login Pages</button>
-            <ul id="loginList" class="list-group"></ul>
+            <div class="category-title">Login/Signin Pages:</div>
+            <button id="searchLogin" class="btn btn-primary category-button w-100">Search Login Pages</button>
+            <ul id="loginList" class="category-list"></ul>
 
-            <h4 class="api-title">Secure/Login Areas:</h4>
-            <button id="searchSecure" class="btn btn-info w-100 mb-3">Search Secure Areas</button>
-            <ul id="secureList" class="list-group"></ul>
+            <div class="category-title">Secure/Login Areas:</div>
+            <button id="searchSecure" class="btn btn-secondary category-button w-100">Search Secure Areas</button>
+            <ul id="secureList" class="category-list"></ul>
 
             <button id="searchAll" class="btn btn-success w-100 mt-3">Search All Dorks on Google</button>
         </div>
@@ -290,66 +310,13 @@
                 `inurl:secure-login`
             ];
 
-            const allQueries = [
-                ...apiEndpoints,
-                ...fileExtensions,
-                ...directoryPatterns,
-                ...fileBasedPatterns,
-                ...errorPatterns,
-                ...loginPatterns,
-                ...securePatterns
-            ];
-
-            // Display individual search queries in the list
+            // Display search results
             document.getElementById('results').style.display = 'block';
-
             apiEndpoints.forEach(query => {
                 const listItem = document.createElement('li');
                 listItem.classList.add('list-group-item');
                 listItem.textContent = query;
                 document.getElementById('apiList').appendChild(listItem);
-            });
-
-            // Add functionality to the "Search All" button
-            document.getElementById('searchAll').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(allQueries.join(' | '))}`;
-                window.open(googleSearchUrl, '_blank');
-            });
-
-            // Add functionality to each category button
-            document.getElementById('searchApi').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(apiEndpoints.join(' | '))}`;
-                window.open(googleSearchUrl, '_blank');
-            });
-
-            document.getElementById('searchExt').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(fileExtensions.join(' | '))}`;
-                window.open(googleSearchUrl, '_blank');
-            });
-
-            document.getElementById('searchDir').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(directoryPatterns.join(' | '))}`;
-                window.open(googleSearchUrl, '_blank');
-            });
-
-            document.getElementById('searchFile').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(fileBasedPatterns.join(' | '))}`;
-                window.open(googleSearchUrl, '_blank');
-            });
-
-            document.getElementById('searchError').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(errorPatterns.join(' | '))}`;
-                window.open(googleSearchUrl, '_blank');
-            });
-
-            document.getElementById('searchLogin').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(loginPatterns.join(' | '))}`;
-                window.open(googleSearchUrl, '_blank');
-            });
-
-            document.getElementById('searchSecure').addEventListener('click', function() {
-                const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(securePatterns.join(' | '))}`;
-                window.open(googleSearchUrl, '_blank');
             });
         });
     </script>
