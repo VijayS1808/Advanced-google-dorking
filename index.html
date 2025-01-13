@@ -11,18 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #FF4081;
-            --background-color: rgba(0, 0, 0, 0.8);
-            --text-color: #ffffff;
-            --accent-color: #FFD1DC;
-            --border-color: rgba(255, 255, 255, 0.1);
+            --primary-color: #2B2D42;
+            --background-color: rgba(255, 255, 255, 0.8);
+            --text-color: #333333;
+            --accent-color: #8D99AE;
+            --border-color: rgba(0, 0, 0, 0.1);
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             max-width: 900px;
             margin: 0 auto;
-            background: var(--background-color) url('https://img.studioflicks.com/wp-content/uploads/2021/08/03111951/Rashmika-Mandanna.jpg') no-repeat center center fixed;
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                        url('https://img.studioflicks.com/wp-content/uploads/2021/08/03111951/Rashmika-Mandanna.jpg') 
+                        no-repeat center center fixed;
             background-size: cover;
             color: var(--text-color);
             padding: 40px 20px;
@@ -35,7 +37,7 @@
             background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary-color);
             text-align: center;
         }
 
@@ -48,7 +50,7 @@
             display: block;
             font-size: 1.2em;
             margin-bottom: 10px;
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         input {
@@ -58,7 +60,7 @@
             padding: 12px 20px;
             border: none;
             border-bottom: 2px solid var(--border-color);
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.9);
             color: var(--text-color);
             transition: all 0.3s ease;
             border-radius: 4px;
@@ -67,7 +69,7 @@
         input:focus {
             outline: none;
             border-bottom-color: var(--accent-color);
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 1);
         }
 
         #dorkList {
@@ -79,13 +81,13 @@
             padding: 20px 0;
             border-bottom: 1px solid var(--border-color);
             transition: transform 0.2s ease, background-color 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.6);
             border-radius: 6px;
         }
 
         li:hover {
             transform: translateX(10px);
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         a {
@@ -99,7 +101,7 @@
         }
 
         p.description {
-            color: var(--accent-color);
+            color: var(--primary-color);
             font-size: 0.9em;
             margin-bottom: 8px;
             text-transform: uppercase;
@@ -110,7 +112,7 @@
             body {
                 padding: 20px;
             }
-            
+
             input {
                 width: calc(100% - 40px);
             }
