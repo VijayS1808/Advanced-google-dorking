@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore powerful Google Dorks curated for bug bounty hunting. Use these search queries to uncover hidden vulnerabilities and sensitive data - by Vijay Sutar.">
+    <meta name="description" content="Explore powerful Dorks curated for bug bounty hunting. Use these search queries to uncover hidden vulnerabilities and sensitive data - by Vijay Sutar.">
     <meta name="author" content="Vijay">
-    <meta name="keywords" content="Google Dorks">
+    <meta name="keywords" content="Dorks, Bug Bounty, DuckDuckGo">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <title>Google Dorks for Bug Bounty - By Vijay Sutar</title>
+    <title>Dorks for Bug Bounty - By Vijay Sutar</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -22,7 +22,7 @@
             font-family: 'Inter', sans-serif;
             max-width: 900px;
             margin: 0 auto;
-            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
                         url('https://pin.it/6MY3v6w0A') 
                         no-repeat center center fixed;
             background-size: cover;
@@ -121,7 +121,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Google Dorks for Bug Bounty - By Vijay Sutar</h1>
+        <h1>Dorks for Bug Bounty - By Vijay Sutar</h1>
 
         <div class="search-container">
             <label for="domainInput">Enter a domain:</label>
@@ -161,7 +161,7 @@
 
                         const linkElement = document.createElement("a");
                         linkElement.classList.add("dorkLink");
-                        linkElement.setAttribute("href", `https://www.google.com/search?q=${encodeURIComponent(dork)}`);
+                        linkElement.setAttribute("href", `https://duckduckgo.com/?q=${encodeURIComponent(dork)}`);
                         linkElement.setAttribute("target", "_blank");
                         linkElement.textContent = dork;
 
@@ -173,7 +173,7 @@
                         const liElement = document.createElement("li");
                         const linkElement = document.createElement("a");
                         linkElement.classList.add("dorkLink");
-                        linkElement.setAttribute("href", `https://www.google.com/search?q=${encodeURIComponent(dork)}`);
+                        linkElement.setAttribute("href", `https://duckduckgo.com/?q=${encodeURIComponent(dork)}`);
                         linkElement.setAttribute("target", "_blank");
                         linkElement.textContent = dork;
                         liElement.appendChild(linkElement);
@@ -198,7 +198,7 @@
                     originalDork = originalDork.replace(/"example\[.]com"/g, `"${domain}"`);
                 });
 
-                link.href = `https://www.google.com/search?q=${encodeURIComponent(originalDork)}`;
+                link.href = `https://duckduckgo.com/?q=${encodeURIComponent(originalDork)}`;
                 link.textContent = originalDork;
             });
         }
