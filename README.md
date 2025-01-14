@@ -37,17 +37,17 @@ site:"example.com" ext:php inurl:?
 
 
 ```
-site:"example[.]com" inurl:api | site:*/rest | site:*/v1 | site:*/v2 | site:*/v3 | site:*/v4 | site:*/graphql | site:*/service 
+site:*.example.com inurl:/api | inurl:/rest | inurl:/v1 | inurl:/v2 | inurl:/v3 | inurl:/v4 | inurl:/graphql | inurl:/service
 
 ```
 ```
 
-site:"example[.]com" site:*/data | site:*/endpoint | site:*/action | site:*/json | site:*/swagger | site:*/auth | site:*/login | site:*/oauth | site:*/user 
+site:*.example.com inurl:/data | inurl:/endpoint | inurl:/action | inurl:/json | inurl:/swagger | inurl:/auth | inurl:/login | inurl:/oauth | inurl:/user
 
 ```
 ```
 
-site:"example[.]com" site:*/profile | site:*/session | site:*/token | site:*/key | site:*/config | site:*/admin | site:*/dashboard | site:*/status | site:*/monitor 
+site:*.example.com inurl:profile | inurl:session | inurl:token | inurl:key | inurl:config | inurl:admin | inurl:dashboard | inurl:status | inurl:monitor
 ```
 ```
 
