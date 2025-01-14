@@ -63,7 +63,7 @@ site:"example[.]com" site:*/rpc | site:*/call | site:*/file | site:*/static | si
 ```
 
 site:"example[.]com" site:*/verify | site:*/verify-email | site:*/sms
-
+```
 ### 💠Juicy Extensions💠
 
 ```
