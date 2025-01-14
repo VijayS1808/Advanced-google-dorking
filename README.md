@@ -35,9 +35,34 @@ site:"example.com" ext:php inurl:?
 
 ### 💠API Endpoints💠
 
+
 ```
-site:"example[.]com" inurl:api | site:*/rest | site:*/v1 | site:*/v2 | site:*/v3 | site:*/v4 | site:*/graphql | site:*/service | site:*/data | site:*/endpoint | site:*/action | site:*/json | site:*/swagger | site:*/auth | site:*/login | site:*/oauth | site:*/user | site:*/profile | site:*/session | site:*/token | site:*/key | site:*/config | site:*/admin | site:*/dashboard | site:*/status | site:*/monitor | site:*/settings | site:*/upload | site:*/download | site:*/search | site:*/metrics | site:*/events | site:*/webhook | site:*/notifications | site:*/report | site:*/logs | site:*/trace | site:*/actions | site:*/queue | site:*/tasks | site:*/subscriptions | site:*/websocket | site:*/batch | site:*/rpc | site:*/call | site:*/file | site:*/static | site:*/api-docs | site:*/health | site:*/register | site:*/reset | site:*/confirm | site:*/verify | site:*/verify-email | site:*/sms
+site:"example[.]com" inurl:api | site:*/rest | site:*/v1 | site:*/v2 | site:*/v3 | site:*/v4 | site:*/graphql | site:*/service 
+
 ```
+```
+
+site:"example[.]com" site:*/data | site:*/endpoint | site:*/action | site:*/json | site:*/swagger | site:*/auth | site:*/login | site:*/oauth | site:*/user 
+
+```
+```
+
+site:"example[.]com" site:*/profile | site:*/session | site:*/token | site:*/key | site:*/config | site:*/admin | site:*/dashboard | site:*/status | site:*/monitor 
+```
+```
+
+site:"example[.]com" site:*/settings | site:*/upload | site:*/download | site:*/search | site:*/metrics | site:*/events | site:*/webhook | site:*/notifications 
+```
+```
+
+site:"example[.]com" site:*/report | site:*/logs | site:*/trace | site:*/actions | site:*/queue | site:*/tasks | site:*/subscriptions | site:*/websocket | site:*/batch '
+```
+```
+site:"example[.]com" site:*/rpc | site:*/call | site:*/file | site:*/static | site:*/api-docs | site:*/health | site:*/register | site:*/reset | site:*/confirm 
+```
+```
+
+site:"example[.]com" site:*/verify | site:*/verify-email | site:*/sms
 
 ### 💠Juicy Extensions💠
 
