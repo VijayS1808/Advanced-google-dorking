@@ -38,23 +38,18 @@ site:"example.com" ext:php inurl:?
 
 ```
 site:"example[.]com" inurl:api | inurl:rest | inurl:v1 | inurl:v2 | inurl:v3 | inurl:v4 | inurl:graphql | inurl:service
-
-```
 ```
 
+```
 site:"example[.]com" inurl:data | inurl:endpoint | inurl:action | inurl:json | inurl:swagger | inurl:auth | inurl:login | inurl:oauth | inurl:user)
-
 ```
 ```
-
 site:"example[.]com" inurl:profile | inurl:session | inurl:token | inurl:key | inurl:config | inurl:admin | inurl:dashboard | inurl:status | inurl:monitor
 ```
 ```
-
 site:"example[.]com" inurl:"/settings" | inurl:"/upload" | inurl:"/download" | inurl:"/search" | inurl:"/metrics" | inurl:"/events" | inurl:"/webhook" | inurl:"/notifications"
 ```
 ```
-
 site:"example[.]com" inurl:"/report" | inurl:"/logs" | inurl:"/trace" | inurl:"/actions" | inurl:"/queue" | inurl:"/tasks" | inurl:"/subscriptions" | inurl:"/websocket" | inurl:"/batch"
 ```
 ```
@@ -70,19 +65,27 @@ site:"example[.]com" site:*/verify | site:*/verify-email | site:*/sms
 ```
 site:"example[.]com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh 
 ```
+```
 site:"example[.]com" ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd 
+```
 ```
 site:"example[.]com" ext:htaccess | ext:json | ext:xml | ext:yml | ext:csv | ext:sql | ext:db | ext:tar 
 ```
+```
 site:"example[.]com" ext:gz | ext:bz2 | ext:7z | ext:zip | ext:rar | ext:log1 | ext:out | ext:tmp 
+```
 ```
 site:"example[.]com" ext:swo | ext:diff | ext:patch | ext:md5 | ext:sha1 | ext:crt | ext:key | ext:pem 
 ```
+```
 site:"example[.]com" ext:cert | ext:jsp | ext:php | ext:asp | ext:aspx | ext:bak1 | ext:swp1 | ext:temp 
+```
 ```
 site:"example[.]com" ext:backup1 | ext:dump | ext:log~ | ext:passwd | ext:pswd | ext:tar.gz | ext:config 
 ```
+```
 site:"example[.]com" ext:inc | ext:sqlite | ext:sqlite3 | ext:db3 | ext:bak~ | ext:orig | ext:old~ 
+```
 ```
 site:"example[.]com" ext:access | ext:secret | ext:credentials | ext:env.backup | ext:env.old | ext:env~ | ext:lock
 ```
