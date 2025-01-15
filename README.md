@@ -37,33 +37,35 @@ site:"example.com" ext:php inurl:?
 
 
 ```
-site:*.example.com inurl:/api | inurl:/rest | inurl:/v1 | inurl:/v2 | inurl:/v3 | inurl:/v4 | inurl:/graphql | inurl:/service
+site:"example[.]com" inurl:api | inurl:rest | inurl:v1 | inurl:v2 | inurl:v3 | inurl:v4 | inurl:graphql | inurl:service
 
 ```
 ```
 
-site:*.example.com inurl:/data | inurl:/endpoint | inurl:/action | inurl:/json | inurl:/swagger | inurl:/auth | inurl:/login | inurl:/oauth | inurl:/user
+site:"example[.]com" inurl:data | inurl:endpoint | inurl:action | inurl:json | inurl:swagger | inurl:auth | inurl:login | inurl:oauth | inurl:user)
 
 ```
 ```
 
-site:*.example.com inurl:profile | inurl:session | inurl:token | inurl:key | inurl:config | inurl:admin | inurl:dashboard | inurl:status | inurl:monitor
+site:"example[.]com" inurl:profile | inurl:session | inurl:token | inurl:key | inurl:config | inurl:admin | inurl:dashboard | inurl:status | inurl:monitor
 ```
 ```
 
-site:"example[.]com" site:*/settings | site:*/upload | site:*/download | site:*/search | site:*/metrics | site:*/events | site:*/webhook | site:*/notifications 
+site:"example[.]com" inurl:"/settings" | inurl:"/upload" | inurl:"/download" | inurl:"/search" | inurl:"/metrics" | inurl:"/events" | inurl:"/webhook" | inurl:"/notifications"
 ```
 ```
 
-site:"example[.]com" site:*/report | site:*/logs | site:*/trace | site:*/actions | site:*/queue | site:*/tasks | site:*/subscriptions | site:*/websocket | site:*/batch '
+site:"example[.]com" inurl:"/report" | inurl:"/logs" | inurl:"/trace" | inurl:"/actions" | inurl:"/queue" | inurl:"/tasks" | inurl:"/subscriptions" | inurl:"/websocket" | inurl:"/batch"
 ```
 ```
-site:"example[.]com" site:*/rpc | site:*/call | site:*/file | site:*/static | site:*/api-docs | site:*/health | site:*/register | site:*/reset | site:*/confirm 
+site:"example[.]com" inurl:"/rpc" | inurl:"/call" | inurl:"/file" | inurl:"/static" | inurl:"/api-docs" | inurl:"/health" | inurl:"/register" | inurl:"/reset" | inurl:"/confirm"
 ```
 ```
 
 site:"example[.]com" site:*/verify | site:*/verify-email | site:*/sms
+
 ```
+
 ### 💠Juicy Extensions💠
 
 ```
