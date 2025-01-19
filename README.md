@@ -132,10 +132,29 @@ site:"example[.]com" inurl:api_keys | inurl:.bashrc
 ```
 
 ### 💠Server Errors💠
-
 ```
-site:"example[.]com" inurl:"error" | intitle:"exception" | intitle:"failure" | intitle:"server at" | inurl:exception | "database error" | "SQL syntax" | "undefined index" | "unhandled exception" | "stack trace" | "500 Internal Server Error" | "503 Service Unavailable" | "404 Not Found" | "Bad Gateway" | "Gateway Timeout" | "request failed" | "server down" | "service error" | "server overload" | "service unavailable" | "connection timeout" | "database connection error" | "fatal error" | "application error" | "system error" | "configuration error" | "403 Forbidden" | "501 Not Implemented" | "502 Bad Gateway" | "408 Request Timeout" | "504 Gateway Timeout" | "403 Forbidden" | "database unresponsive" | "invalid query" 
-
+site:"example[.]com" inurl:"error" | intitle:"exception" | intitle:"failure" | intitle:"server at" | inurl:exception
+```
+```
+site:"example[.]com" "database error" | "SQL syntax" | "undefined index" | "unhandled exception" | "stack trace"
+```
+```
+site:"example[.]com" "500 Internal Server Error" | "503 Service Unavailable" | "404 Not Found" | "Bad Gateway"
+```
+```
+site:"example[.]com" "Gateway Timeout" | "request failed" | "server down" | "service error" | "server overload"
+```
+```
+site:"example[.]com" "service unavailable" | "connection timeout" | "database connection error" | "fatal error"
+```
+```
+site:"example[.]com" "application error" | "system error" | "configuration error" | "403 Forbidden"
+```
+```
+site:"example[.]com" "501 Not Implemented" | "502 Bad Gateway" | "408 Request Timeout" | "504 Gateway Timeout"
+```
+```
+site:"example[.]com" "database unresponsive" | "invalid query"  
 ```
 
 ### 💠XSS prone parameters💠
