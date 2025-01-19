@@ -90,9 +90,48 @@ site:"example[.]com" ext:inc | ext:sqlite | ext:sqlite3 | ext:db3 | ext:bak~ | e
 site:"example[.]com" ext:access | ext:secret | ext:credentials | ext:env.backup | ext:env.old | ext:env~ | ext:lock
 ```
 ### 💠High % inurl keywords💠
-
 ```
-site:"example[.]com" inurl:conf | inurl:env | inurl:cgi | inurl:bin | inurl:etc | inurl:root | inurl:sql | inurl:backup | inurl:admin | inurl:php | inurl:config | inurl:db | inurl:logs | inurl:wp-content | inurl:private | inurl:inc | inurl:uploads | inurl:data | inurl:server | inurl:secure | inurl:auth | inurl:login | inurl:dev | inurl:debug | inurl:staging | inurl:test | inurl:temp | inurl:core | inurl:install | inurl:readme | inurl:.env | inurl:.git | inurl:.svn | inurl:.bak | inurl:.tar | inurl:.zip | inurl:adminpanel | inurl:dashboard | inurl:config.php | inurl:settings | inurl:resources | inurl:static | inurl:api | inurl:config.json | inurl:.htaccess | inurl:.gitignore | inurl:composer.json | inurl:docker-compose.yml | inurl:uploads | inurl:tmp | inurl:assets | inurl:scripts | inurl:middleware | inurl:management | inurl:.npmrc | inurl:node_modules | inurl:debug.log | inurl:trace | inurl:version | inurl:custom | inurl:monitor | inurl:session | inurl:cache | inurl:backup.zip | inurl:dump.sql | inurl:archive | inurl:archives | inurl:binlog | inurl:email | inurl:messages | inurl:logs.txt | inurl:config.yaml | inurl:cron | inurl:ssl | inurl:secrets | inurl:protected | inurl:key | inurl:privatekey | inurl:publickey | inurl:db_backup | inurl:admin_area | inurl:panel | inurl:settings.xml | inurl:config.xml | inurl:.rnd | inurl:*.bak | inurl:.pem | inurl:.key | inurl:.pfx | inurl:db_restore | inurl:api_keys | inurl:.bashrc 
+site:"example[.]com" inurl:conf | inurl:env | inurl:cgi | inurl:bin | inurl:etc | inurl:root 
+```
+```
+site:"example[.]com" inurl:sql | inurl:backup | inurl:admin | inurl:php | inurl:config | inurl:db  
+```
+```
+site:"example[.]com" inurl:logs | inurl:wp-content | inurl:private | inurl:inc | inurl:uploads | inurl:data  
+```
+```
+site:"example[.]com" inurl:server | inurl:secure | inurl:auth | inurl:login | inurl:dev | inurl:debug  
+```
+```
+site:"example[.]com" inurl:staging | inurl:test | inurl:temp | inurl:core | inurl:install | inurl:readme  
+```
+```
+site:"example[.]com" inurl:.env | inurl:.git | inurl:.svn | inurl:.bak | inurl:.tar | inurl:.zip  
+```
+```
+site:"example[.]com" inurl:adminpanel | inurl:dashboard | inurl:config.php | inurl:settings | inurl:resources  
+```
+```
+site:"example[.]com" inurl:static | inurl:api | inurl:config.json | inurl:.htaccess | inurl:.gitignore | inurl:composer.json 
+```
+```
+site:"example[.]com" inurl:docker-compose.yml | inurl:tmp | inurl:assets | inurl:scripts | inurl:middleware | inurl:management  
+```
+```
+
+site:"example[.]com" inurl:.npmrc | inurl:node_modules | inurl:debug.log | inurl:trace | inurl:version | inurl:custom 
+```
+```
+site:"example[.]com" inurl:monitor | inurl:session | inurl:cache | inurl:backup.zip | inurl:dump.sql | inurl:archive  
+```
+```
+site:"example[.]com" inurl:cron | inurl:ssl | inurl:secrets | inurl:protected | inurl:key | inurl:privatekey  
+```
+```
+site:"example[.]com" inurl:admin_area | inurl:panel | inurl:settings.xml | inurl:.pem | inurl:.key | inurl:db_restore  
+```
+```
+site:"example[.]com" inurl:api_keys | inurl:.bashrc  
 ```
 
 ### 💠Server Errors💠
