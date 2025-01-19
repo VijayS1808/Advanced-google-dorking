@@ -39,7 +39,6 @@ site:"example.com" ext:php inurl:?
 ```
 site:"example[.]com" inurl:api | inurl:rest | inurl:v1 | inurl:v2 | inurl:v3 | inurl:v4 | inurl:graphql | inurl:service
 ```
-
 ```
 site:"example[.]com" inurl:data | inurl:endpoint | inurl:action | inurl:json | inurl:swagger | inurl:auth | inurl:login | inurl:oauth | inurl:user)
 ```
@@ -56,9 +55,7 @@ site:"example[.]com" inurl:"/report" | inurl:"/logs" | inurl:"/trace" | inurl:"/
 site:"example[.]com" inurl:"/rpc" | inurl:"/call" | inurl:"/file" | inurl:"/static" | inurl:"/api-docs" | inurl:"/health" | inurl:"/register" | inurl:"/reset" | inurl:"/confirm"
 ```
 ```
-
 site:"example[.]com" site:*/verify | site:*/verify-email | site:*/sms
-
 ```
 
 ### 💠Juicy Extensions💠
