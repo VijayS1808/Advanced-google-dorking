@@ -158,10 +158,29 @@ site:"example[.]com" "database unresponsive" | "invalid query"
 ```
 
 ### 💠XSS prone parameters💠
-
 ```
-site:"example[.]com" inurl:q= | inurl:s= | inurl:search= | inurl:query= | inurl:keyword= | inurl:lang= | inurl:& | inurl:page= | inurl:term= | inurl:cat= | inurl:ref= | inurl:tag= | inurl:show= | inurl:id= | inurl:product= | inurl:article= | inurl:post= | inurl:count= | inurl:type= | inurl:category= | inurl:filter= | inurl:author= | inurl:date= | inurl:count= | inurl:entry= | inurl:sort= | inurl:order= | inurl:view= | inurl:searchterm= | inurl:querystring= | inurl:results= | inurl:subcategory= | inurl:filename= | inurl:file= | inurl:categoryid= | inurl:langcode= | inurl:price= | inurl:page_id= | inurl:limit= | inurl:slug= | inurl:status= | inurl:uid= | inurl:session= | inurl:locale= | inurl:page_num= 
-
+site:"example[.]com" inurl:q= | inurl:s= | inurl:search= | inurl:query= | inurl:keyword= | inurl:lang=  
+```
+```
+site:"example[.]com" inurl:& | inurl:page= | inurl:term= | inurl:cat= | inurl:ref= | inurl:tag=  
+```
+```
+site:"example[.]com" inurl:show= | inurl:id= | inurl:product= | inurl:article= | inurl:post= | inurl:count=  
+```
+```
+site:"example[.]com" inurl:type= | inurl:category= | inurl:filter= | inurl:author= | inurl:date= | inurl:entry=  
+```
+```
+site:"example[.]com" inurl:sort= | inurl:order= | inurl:view= | inurl:searchterm= | inurl:querystring=  
+```
+```
+site:"example[.]com" inurl:results= | inurl:subcategory= | inurl:filename= | inurl:file= | inurl:categoryid=  
+```
+```
+site:"example[.]com" inurl:langcode= | inurl:price= | inurl:page_id= | inurl:limit= | inurl:slug=  
+```
+```
+site:"example[.]com" inurl:status= | inurl:uid= | inurl:session= | inurl:locale= | inurl:page_num=  
 ```
 
 ### 💠Open Redirect prone parameters💠
